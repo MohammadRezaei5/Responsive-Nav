@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Vazirmatn", sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  background-color: #312e81;
+  padding: 0 20px;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+.nav-links li {
+  background-color: #2563eb;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.nav-links li:hover {
+  background-color: #1d4ed8;
+}
+.hamburger-menu i {
+  font-size: 25px;
+  color: #ffffff;
+}
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+/* media-query */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background-color: #312e81;
+    z-index: 1;
+    gap: 10px;
+    padding: 20px;
+    border-top: 5px solid #fcd34d;
+    animation: slide-up 0.2s, slide-down 0.2s;
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  /* dont work, why?[SEARCH] */
+  /* @keyframes slide-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  } */
+}
